@@ -1,0 +1,5 @@
+debian/stsbl-iserv-apache-basic-authentification/*
+debian/stsbl-iserv-apache-basic-authentification.substvars
+debian/stsbl-iserv-apache-basic-authentification.debhelper.log
+debian/files
+debian/debhelper-build-stamp
