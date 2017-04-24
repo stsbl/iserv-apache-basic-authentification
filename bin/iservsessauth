@@ -1,0 +1,59 @@
+#!/usr/bin/perl -T -CSDAL
+
+use warnings;
+use strict;
+use utf8;
+use Getopt::Long qw(:config bundling);
+use IServ::IO;
+use IServ::DB;
+use IO::Prompter;
+use Stsbl::IServ::IO;
+use Stsbl::IServ::Security;
+
+undef %ENV;
+
+# must run as www-data
+$IServ::DB::user = "apacheauth";
+
+my ($groups, $help);
+GetOptions(
+ "groups|g=s" => \$groups,
+ "help|h" => \$help
+);
+
+print <<USAGE and exit if $help;
+Usage: $0 [options]
+Options
+ -g, --groups=[LIST OF GROUPS]		limit successful authentification to members of this groups (list of comma-separated group accounts)
+ -h, --help             		show this help
+USAGE
+
+my ($act, $password) = (
+  scalar prompt("User:"),
+  scalar prompt("Password:"),
+);
+
+Stsbl::IServ::IO::error "Invalid input!" if not defined $act or not defined $password or $act eq '' or $password eq '';
+
+# validate memberships
+if (defined $groups)
+{
+  my @group_acts = split /,/, $groups;
+  my $has_valid_membership = 0;
+
+  if (@group_acts > 0)
+  {
+    foreach my $group_act (@group_acts)
+    {
+      if (IServ::DB::Do "SELECT 1 FROM members WHERE ActUser = ? AND ActGrp = ?", $act, $group_act)
+      {
+	$has_valid_membership = 1;
+      }
+    }
+
+    Stsbl::IServ::IO::error "No valid memberships found!" unless $has_valid_membership;
+  }
+}
+
+Stsbl::IServ::Security::set_credentials $act, $password;
+Stsbl::IServ::Security::sessauth_login 'iservsessauth';
