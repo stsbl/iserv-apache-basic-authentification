@@ -9,5 +9,6 @@ Package: stsbl-iserv-apache-basic-authentification
 Architecture: all
 Depends: iserv-portal, stsbl-iserv-perl-lib, libio-prompter-perl, libapache2-mod-authnz-external
 Description: IServ Apache - HTTP-Authentifizierung
- Erlaubt die HTTP Basic Authentifizierung für zusätzliche eigene Websiten, die auf dem Portalserver laufen gegen die IServ-Benutzerdatenbank.
-Tag: suite::iserv:portal, role::plugin 
+ Erlaubt die HTTP Basic Authentifizierung für zusätzliche eigene Websiten, 
+ die auf dem Portalserver laufen gegen die IServ-Benutzerdatenbank.
+Tag: suite::iserv:portal, role::plugin
