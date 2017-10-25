@@ -1,3 +1,9 @@
+stsbl-iserv-apache-basic-authentification (17.10.25-2) unstable; urgency=medium
+
+  * Fixed too long extended description
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Wed, 25 Oct 2017 23:34:31 +0200
+
 stsbl-iserv-apache-basic-authentification (17.10.25-1) unstable; urgency=medium
 
   * Updated build deps and rules.
