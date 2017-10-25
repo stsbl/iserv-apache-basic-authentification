@@ -1,3 +1,11 @@
+stsbl-iserv-apache-basic-authentification (17.10.25-1) unstable; urgency=medium
+
+  * Updated build deps and rules.
+  * Fixed build deps.
+  * Added explicit db user
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Wed, 25 Oct 2017 23:32:38 +0200
+
 stsbl-iserv-apache-basic-authentification (17.04.25-0) unstable; urgency=low
 
   * Initial Release.
