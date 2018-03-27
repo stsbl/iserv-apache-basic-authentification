@@ -3,11 +3,18 @@ Section: misc
 Priority: extra
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
 Build-Depends: debhelper (>= 10), iserv3-dev
-Standards-Version: 3.9.5
+Build-Depends-Indep: iserv3-dev
+Standards-Version: 4.1.3.0
 
 Package: stsbl-iserv-apache-basic-authentification
 Architecture: all
-Depends: iserv-portal, stsbl-iserv-perl-lib, libio-prompter-perl, libapache2-mod-authnz-external
+Depends: ${misc:Depends},
+  ${perl:Depends},
+  iserv-portal,
+  libapache2-mod-authnz-external,
+  libio-prompter-perl,
+  stsbl-iserv-perl-lib,
+Xb-Private-IServ-Revision: ${iserv:Revision}
 Description: IServ Apache - HTTP-Authentifizierung
  Erlaubt die HTTP Basic Authentifizierung für zusätzliche eigene Websiten, 
  die auf dem Portalserver laufen gegen die IServ-Benutzerdatenbank.
