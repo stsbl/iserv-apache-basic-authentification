@@ -4,7 +4,6 @@ use warnings;
 use strict;
 use utf8;
 use Getopt::Long qw(:config bundling);
-use IServ::IO;
 use IServ::DB;
 use IO::Prompter;
 use Stsbl::IServ::IO;
