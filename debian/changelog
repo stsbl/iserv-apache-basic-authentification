@@ -1,3 +1,10 @@
+stsbl-iserv-apache-basic-authentification (20.02.14-1) stable; urgency=medium
+
+  * Updated packaging
+  * Removed IServ::IO
+
+ -- Felix Jacobi <felix.jacobi@stsbl.de>  Fri, 14 Feb 2020 01:12:54 +0100
+
 stsbl-iserv-apache-basic-authentification (17.10.25-2) unstable; urgency=medium
 
   * Fixed too long extended description
