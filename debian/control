@@ -1,21 +1,23 @@
 Source: stsbl-iserv-apache-basic-authentification
 Section: misc
-Priority: extra
+Priority: optional
 Maintainer: Stadtteilschule Blankenese <repository@stsbl.de>
-Build-Depends: debhelper (>= 10), iserv3-dev
-Build-Depends-Indep: iserv-buildtools
-Standards-Version: 4.1.3
+Build-Depends: debhelper-compat (= 13),
+               dh-sequence-iserv,
+               dh-sequence-stsbl,
+               iserv3-dev
+Standards-Version: 4.5.0
 
 Package: stsbl-iserv-apache-basic-authentification
 Architecture: all
-Depends: ${misc:Depends},
-  ${perl:Depends},
-  iserv-portal,
-  libapache2-mod-authnz-external,
-  libio-prompter-perl,
-  stsbl-iserv-perl-lib,
-Xb-Private-IServ-Revision: ${iserv:Revision}
+Depends: iserv-portal,
+         libapache2-mod-authnz-external,
+         libio-prompter-perl,
+         stsbl-iserv-perl-lib,
+         ${misc:Depends},
+         ${perl:Depends}
+Xb-Private-Iserv-Revision: ${iserv:Revision}
 Description: IServ Apache - HTTP-Authentifizierung
- Erlaubt die HTTP Basic Authentifizierung für zusätzliche eigene Websiten, 
+ Erlaubt die HTTP Basic Authentifizierung für zusätzliche eigene Websiten,
  die auf dem Portalserver laufen gegen die IServ-Benutzerdatenbank.
 Tag: suite::iserv:portal, role::plugin
