@@ -3,3 +3,7 @@ debian/stsbl-iserv-apache-basic-authentification.substvars
 debian/stsbl-iserv-apache-basic-authentification.debhelper.log
 debian/files
 debian/debhelper-build-stamp
+/Makefile.iservmake
+/locale
+/system-locale
+!/locale/templates/*_misc.pot
